@@ -1,0 +1,2 @@
+# AcademicWritingUtility
+The Academic Writing Utility allows capturing, citing, and editing academic writing. It allows entry of references for an automatic, intelligent reference list of what was used in the document. Allows capturing sentences or paragraphs, with or without citation as required. Allows rearranging sentences and paragraphs. Exports to docx xml. Initial citations and references will be created using APA 7 formatting.
