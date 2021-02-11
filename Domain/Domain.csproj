@@ -45,21 +45,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseClass.cs" />
-    <Compile Include="Models\BaseClass.cs" />
+    <Compile Include="BaseClass.cs" />
+    <Compile Include="ICitation.cs" />
+    <Compile Include="IRepositories\IBaseRepository.cs" />
+    <Compile Include="IRepositories\ICitationGetRepository.cs" />
+    <Compile Include="IRepositories\ICitationPutRepository.cs" />
+    <Compile Include="IRepositories\IDraftGetRepository.cs" />
+    <Compile Include="IRepositories\IDraftPutRepository.cs" />
+    <Compile Include="IRepositories\IFindRepository.cs" />
+    <Compile Include="IRepositories\IRepository.cs" />
+    <Compile Include="Models\ArticleNotebook.cs" />
+    <Compile Include="Models\ArticleNotebookRelated.cs" />
     <Compile Include="Models\Citation.cs" />
+    <Compile Include="Models\CitationFieldValue.cs" />
     <Compile Include="Models\CitationResearcher.cs" />
-    <Compile Include="Models\CitationType.cs" />
     <Compile Include="Models\Draft.cs" />
-    <Compile Include="Models\JournalArticle.cs" />
-    <Compile Include="Models\Online.cs" />
+    <Compile Include="Models\Lookup.cs" />
+    <Compile Include="Models\LookupType.cs" />
+    <Compile Include="Models\NotebookCitation.cs" />
+    <Compile Include="Models\NotebookExternalCitation.cs" />
+    <Compile Include="Models\NotebookSection.cs" />
     <Compile Include="Models\ParaPhrase.cs" />
-    <Compile Include="Models\Publisher.cs" />
     <Compile Include="Models\Researcher.cs" />
-    <Compile Include="Models\Version.cs" />
+    <Compile Include="Models\PaperVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IRepositories\" />
     <Folder Include="IServices\" />
   </ItemGroup>
   <ItemGroup>

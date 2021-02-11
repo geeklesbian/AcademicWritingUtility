@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AcademicWritingUtility.Domain.Models
+namespace AcademicWritingUtility.Services
 {
-    public abstract class BaseClass : IBaseClass
+    public abstract class BaseDTO
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
-        protected BaseClass() 
+        protected BaseDTO() 
         {
             Id = Guid.NewGuid();
         }
-        protected BaseClass(Guid id)
+        protected BaseDTO(Guid id)
         {
             Id = id;
         }

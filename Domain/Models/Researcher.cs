@@ -11,14 +11,22 @@ namespace AcademicWritingUtility.Domain.Models
         public string LastName { get; protected set; }
         public string Initials { get; protected set; }
 
-        public List<Citation> Citations { get; set; } = new List<Citation>();
+        public List<CitationResearcher> CitationResearchers => new List<CitationResearcher>();
 
+        public static Researcher New(string lastName, string initials)
+        {
+            return new Researcher(lastName, initials);
+        }
+        public static Researcher New(Guid id, string lastName, string initials)
+        {
+            return new Researcher(id, lastName, initials);
+        }
         public Researcher() : base() { }
-        public Researcher(string lastName, string initials) : base()
+        internal Researcher(string lastName, string initials) : base()
         {
             SetValues(lastName, initials);
         }
-        public Researcher(Guid id, string lastName, string initials) : base(id)
+        internal Researcher(Guid id, string lastName, string initials) : base(id)
         {
             SetValues(lastName, initials);
         }

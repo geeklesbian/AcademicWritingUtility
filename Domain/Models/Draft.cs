@@ -10,14 +10,23 @@ namespace AcademicWritingUtility.Domain.Models
     {
         public string Name { get; private set; }
 
-        public List<Version> Versions { get; set; } = new List<Version>();
+        public List<PaperVersion> Versions { get; set; } = new List<PaperVersion>();
+
+        public static Draft New(Guid id, string name)
+        {
+            return new Draft(id, name);
+        }
+        public static Draft New(string name)
+        {
+            return new Draft(name);
+        }
 
         public Draft() : base() { }
-        public Draft(string name) : base()
+        internal Draft(string name) : base()
         {
             Name = name;
         }
-        public Draft(Guid id, string name) : base(id)
+        internal Draft(Guid id, string name) : base(id)
         {
             Name = name;
         }

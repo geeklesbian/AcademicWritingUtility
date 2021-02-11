@@ -8,27 +8,38 @@ namespace AcademicWritingUtility.Domain.Models
 {
     public class ParaPhrase : BaseClass
     {
+        public Guid CitationId { get; private set; }
+        public string PageNumber { get; private set; }
         public Guid VersionId { get; private set; }
         public int Order { get; private set; }
         public string Phrase { get; private set; }
-        public Guid CitationId { get; private set; }
 
+        public static ParaPhrase New(Guid id, Guid citationId, string pageNumber, Guid versionId, int order, string phrase)
+        {
+            return new ParaPhrase(id, citationId, pageNumber, versionId, order, phrase);
+        }
+        public static ParaPhrase New(Guid citationId, string pageNumber, Guid versionId, int order, string phrase)
+        {
+            return new ParaPhrase(citationId, pageNumber, versionId, order, phrase);
+        }
 
         public ParaPhrase() : base() { }
-        public ParaPhrase(Guid versionId, int order, string phrase, Guid? citationId) : base()
+
+        internal ParaPhrase(Guid? citationId, string pageNumber, Guid versionId, int order, string phrase) : base()
         {
-            SetValues(versionId, order, phrase, citationId);
+            SetValues(citationId, pageNumber, versionId, order, phrase);
         }
-        public ParaPhrase(Guid id, Guid versionId, int order, string phrase, Guid? citationId) : base(id)
+        internal ParaPhrase(Guid id, Guid? citationId, string pageNumber, Guid versionId, int order, string phrase) : base(id)
         {
-            SetValues(versionId, order, phrase, citationId);
+            SetValues(citationId, pageNumber, versionId, order, phrase);
         }
-        private void SetValues(Guid versionId, int order, string phrase, Guid? citationId)
+        private void SetValues(Guid? citationId, string pageNumber, Guid versionId, int order, string phrase)
         {
+            CitationId = citationId != null ? (Guid)citationId : Guid.Empty;
+            PageNumber = pageNumber;
             VersionId = versionId;
             Order = order;
             Phrase = phrase;
-            CitationId = citationId != null ? (Guid)citationId : Guid.Empty;
         }
     }
 }
