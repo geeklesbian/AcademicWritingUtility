@@ -10,6 +10,8 @@ namespace AcademicWritingUtility.Domain.Models
     {
         public Guid CitationId { get; private set; }
 
+        public Citation Citation { get; private set; }
+
         internal static NotebookCitation New(Guid id, Guid articleNotebookId, Guid citationId)
         {
             return new NotebookCitation(id, articleNotebookId, citationId);

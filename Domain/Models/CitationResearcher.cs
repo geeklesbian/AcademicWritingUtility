@@ -11,11 +11,15 @@ namespace AcademicWritingUtility.Domain.Models
         public Guid CitationId { get; private set; }
         public Guid ResearcherId { get; private set; }
 
-        public static CitationResearcher New(Guid id, Guid citationId, Guid researcherId)
+        public Citation Citation { get; private set; }
+        public Researcher Researcher { get; private set; }
+
+
+        internal static CitationResearcher New(Guid id, Guid citationId, Guid researcherId)
         {
             return new CitationResearcher(id, citationId, researcherId);
         }
-        public static CitationResearcher New(Guid citationid, Guid researcherid)
+        internal static CitationResearcher New(Guid citationid, Guid researcherid)
         {
             return new CitationResearcher(citationid, researcherid);
         }

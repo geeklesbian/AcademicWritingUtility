@@ -11,6 +11,10 @@ namespace AcademicWritingUtility.Domain.Models
         public Guid LookupTypeId { get; private set; }
         public string Val { get; private set; }
 
+        public List<CitationFieldValue> CitationFieldValues { get; set; } = new List<CitationFieldValue>();
+
+        public LookupType LookupType { get; private set; }
+
         public static Lookup New(Guid lookupTypeId, string val)
         {
             return new Lookup(lookupTypeId, val);

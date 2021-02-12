@@ -14,6 +14,10 @@ namespace AcademicWritingUtility.Domain.Models
         public int Order { get; private set; }
         public string Phrase { get; private set; }
 
+        public Citation Citation { get; private set; }
+        public PaperVersion PaperVersion { get; private set; }
+
+
         public static ParaPhrase New(Guid id, Guid citationId, string pageNumber, Guid versionId, int order, string phrase)
         {
             return new ParaPhrase(id, citationId, pageNumber, versionId, order, phrase);

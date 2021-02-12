@@ -52,8 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AWUContext.cs" />
+    <Compile Include="Configurations\ArticleNotebookConfiguration.cs" />
     <Compile Include="Configurations\BaseMigrationConfigurations.cs" />
+    <Compile Include="Configurations\CitationConfiguration.cs" />
+    <Compile Include="Configurations\DraftConfiguration.cs" />
     <Compile Include="Configurations\ForeignKeyNamingConvention.cs" />
+    <Compile Include="Configurations\LookupConfiguration.cs" />
+    <Compile Include="Configurations\LookupTypeConfiguration.cs" />
+    <Compile Include="Configurations\PaperVersionConfiguration.cs" />
+    <Compile Include="Configurations\ResearcherConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DisposableRepository.cs" />

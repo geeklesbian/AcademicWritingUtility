@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AcademicWritingUtility.Domain.Models
 {
-    public abstract class Citation : BaseClass
+    public class Citation : BaseClass
     {
         public Guid CitationTypeId { get; private set; }
         public string Title { get; private set; }
@@ -18,6 +18,10 @@ namespace AcademicWritingUtility.Domain.Models
 
         public List<CitationResearcher> CitationResearchers { get; set; } = new List<CitationResearcher>();
         public List<CitationFieldValue> CitationFieldValues { get; set; } = new List<CitationFieldValue>();
+        public List<NotebookCitation> NotebookCitations { get; set; } = new List<NotebookCitation>();
+        public List<NotebookExternalCitation> NotebookExternalCitations { get; set; } = new List<NotebookExternalCitation>();
+        public List<ParaPhrase> ParaPhrases { get; set; } = new List<ParaPhrase>();
+
 
         public virtual string GetFields<TEntity>()
            where TEntity : class, ICitation, new()
@@ -36,12 +40,12 @@ namespace AcademicWritingUtility.Domain.Models
             return e.New(values);
         }
 
-        protected Citation() : base() { }
-        protected Citation(Guid citationTypeId, string title, string name, int yearPublished, string doi = "") : base()
+        public Citation() : base() { }
+        internal Citation(Guid citationTypeId, string title, string name, int yearPublished, string doi = "") : base()
         {
             SetValues(citationTypeId, title, name, yearPublished, doi);
         }
-        protected Citation(Guid id, Guid citationTypeId, string title, string name, int yearPublished, string doi="") : base(id)
+        internal Citation(Guid id, Guid citationTypeId, string title, string name, int yearPublished, string doi="") : base(id)
         {
             SetValues(citationTypeId, title, name, yearPublished, doi);
         }

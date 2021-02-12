@@ -11,7 +11,10 @@ namespace AcademicWritingUtility.Domain.Models
         public Guid DraftId { get; private set; }
         public int Number { get; private set; }
         public string Name { get; private set; }
+
         public List<ParaPhrase> ParaPhrases { get; set; } = new List<ParaPhrase>();
+
+        public Draft Draft { get; private set; }
 
         public static PaperVersion New(Guid draftId, int number, string name)
         {

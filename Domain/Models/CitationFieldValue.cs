@@ -16,11 +16,11 @@ namespace AcademicWritingUtility.Domain.Models
         public Citation Citation { get; set; }
         public Lookup Field { get; set; }
 
-        public static CitationFieldValue New(Guid id, Guid citationId, Guid fieldId, string val)
+        internal static CitationFieldValue New(Guid id, Guid citationId, Guid fieldId, string val)
         {
             return new CitationFieldValue(id, citationId, fieldId, val);
         }
-        public static CitationFieldValue New(Guid citationId, Guid fieldId, string val)
+        internal static CitationFieldValue New(Guid citationId, Guid fieldId, string val)
         {
             return new CitationFieldValue(citationId, fieldId, val);
         }
