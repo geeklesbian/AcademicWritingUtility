@@ -64,10 +64,12 @@
     <Compile Include="Models\LookupType.cs" />
     <Compile Include="Models\NotebookCitation.cs" />
     <Compile Include="Models\NotebookExternalCitation.cs" />
+    <Compile Include="Models\NotebookParaPhrase.cs" />
     <Compile Include="Models\NotebookSection.cs" />
     <Compile Include="Models\ParaPhrase.cs" />
     <Compile Include="Models\Researcher.cs" />
     <Compile Include="Models\PaperVersion.cs" />
+    <Compile Include="Models\VersionParaPhrase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,7 +12,7 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         internal LookupTypeConfiguration() : base()
         {
-            HasMany(e => e.Lookups).WithRequired(c => c.LookupType).HasForeignKey(c => c.LookupTypeId).WillCascadeOnDelete(true);
+            HasMany(e => e.Lookups).WithRequired(c => c.LookupType).HasForeignKey(c => c.LookupTypeId).WillCascadeOnDelete(false);
         }
     }
 }

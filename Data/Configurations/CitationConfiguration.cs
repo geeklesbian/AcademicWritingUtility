@@ -13,11 +13,14 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         internal CitationConfiguration() : base()
         {
-            HasMany(e => e.CitationFieldValues).WithRequired(c => c.Citation).HasForeignKey(c => c.CitationId).WillCascadeOnDelete(true);
-            HasMany(e => e.CitationResearchers).WithRequired(c => c.Citation).HasForeignKey(c => c.ResearcherId).WillCascadeOnDelete(true);
-            HasMany(e => e.NotebookCitations).WithRequired(c => c.Citation).HasForeignKey(c => c.CitationId).WillCascadeOnDelete(true);
-            HasMany(e => e.NotebookExternalCitations).WithRequired(c => c.ExternalCitation).HasForeignKey(c => c.ExternalCitationId).WillCascadeOnDelete(true);
-            HasMany(e => e.ParaPhrases).WithRequired(c => c.Citation).HasForeignKey(c => c.CitationId).WillCascadeOnDelete(true);
+            Property(p => p.Title).HasColumnType("varchar").IsRequired().HasMaxLength(300);
+            Property(p => p.Name).HasColumnType("varchar").IsRequired().HasMaxLength(300);
+            Property(p => p.YearPublished).HasColumnType("int").IsRequired();
+
+            HasMany(e => e.ArticleNotebooks).WithRequired(c => c.Citation).HasForeignKey(c => c.CitationId).WillCascadeOnDelete(false);
+            HasMany(e => e.CitationFieldValues).WithRequired(c => c.Citation).HasForeignKey(c => c.CitationId).WillCascadeOnDelete(false);
+            HasMany(e => e.CitationResearchers).WithRequired(c => c.Citation).HasForeignKey(c => c.CitationId).WillCascadeOnDelete(false);
+            HasMany(e => e.ParaPhrases).WithRequired(c => c.Citation).HasForeignKey(c => c.CitationId).WillCascadeOnDelete(false);
         }
     }
 }

@@ -19,13 +19,16 @@ namespace AcademicWritingUtility.Data
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Add<ForeignKeyNamingConvention>();
 
-            modelBuilder.Configurations.Add(new ArticleNotebookConfiguration());
             modelBuilder.Configurations.Add(new CitationConfiguration());
             modelBuilder.Configurations.Add(new DraftConfiguration());
             modelBuilder.Configurations.Add(new LookupConfiguration());
             modelBuilder.Configurations.Add(new LookupTypeConfiguration());
-            modelBuilder.Configurations.Add(new PaperVersionConfiguration());
+            modelBuilder.Configurations.Add(new NotebookCitationConfiguration());
+            modelBuilder.Configurations.Add(new NotebookExternalCitationConfiguration());
+            modelBuilder.Configurations.Add(new NotebookParaPhraseConfiguration());
+            modelBuilder.Configurations.Add(new NotebookSectionConfiguration());
             modelBuilder.Configurations.Add(new ResearcherConfiguration());
+            modelBuilder.Configurations.Add(new VersionParaPhraseConfiguration());
 
             modelBuilder.Entity<CitationFieldValue>().HasKey(e => e.Id);
             modelBuilder.Entity<CitationResearcher>().HasKey(e => e.Id);
@@ -45,10 +48,12 @@ namespace AcademicWritingUtility.Data
         internal DbSet<LookupType> LookupTypes { get; set; }
         internal DbSet<NotebookCitation> NotebookCitations { get; set; }
         internal DbSet<NotebookExternalCitation> NotebookExternalCitations { get; set; }
+        internal DbSet<NotebookParaPhrase> NotebookParaPhrases { get; set; }
         internal DbSet<NotebookSection> NotebookSections { get; set; }
         internal DbSet<PaperVersion> PageVersions { get; set; }
         internal DbSet<ParaPhrase> ParaPhrases { get; set; }
         internal DbSet<Researcher> Researchers { get; set; }
+        internal DbSet<VersionParaPhrase> VersionParaPhrases { get; set; }
 
         #endregion
 
@@ -56,7 +61,7 @@ namespace AcademicWritingUtility.Data
         {
             Database.SetInitializer<AWUContext>(null);
         }
-        public AWUContext() : this(@"data source=localhost\SQL2019;initial catalog=AcademicWritingUtility;persist security info=True;user id=AcademicWritingUtilityUser;password=@c@d3m!c;MultipleActiveResultSets=True;App=EntityFramework")
+        public AWUContext() : this(@"data source=.\SQL20191;initial catalog=AcademicWritingUtility;persist security info=True;user id=AcademicWritingUtilityUser;password=@c@d3m!c;MultipleActiveResultSets=True;App=EntityFramework")
         { }
 
     }

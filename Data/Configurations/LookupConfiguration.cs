@@ -10,7 +10,8 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         internal LookupConfiguration() : base()
         {
-            HasMany(e => e.CitationFieldValues).WithRequired(c => c.Field).HasForeignKey(c => c.FieldId).WillCascadeOnDelete(true);
+            HasMany(e => e.Citations).WithRequired(c => c.CitationType).HasForeignKey(c => c.CitationTypeId).WillCascadeOnDelete(false);
+            HasMany(e => e.CitationFieldValues).WithRequired(c => c.Field).HasForeignKey(c => c.FieldId).WillCascadeOnDelete(false);
         }
     }
 }

@@ -34,7 +34,8 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         public EntityBaseMigrastionMapConfiguration() : base() 
         {
-            HasKey(e => e.Id);
+            //Property(e => e.Id).HasColumnType("uniqueidentifier");
+            //HasKey(e => e.Id);
         }
     }
     //public abstract class EntityMigrationConfiguration<TEntity, TId> : EntityBaseMigrastionMapConfiguration<TEntity, TId>

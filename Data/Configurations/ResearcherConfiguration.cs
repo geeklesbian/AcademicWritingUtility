@@ -12,7 +12,7 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         internal ResearcherConfiguration() : base()
         {
-            HasMany(e => e.CitationResearchers).WithRequired(c => c.Researcher).HasForeignKey(c => c.ResearcherId).WillCascadeOnDelete(true);
+            HasMany(e => e.CitationResearchers).WithRequired(c => c.Researcher).HasForeignKey(c => c.ResearcherId).WillCascadeOnDelete(false);
         }
     }
 }

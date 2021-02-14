@@ -10,9 +10,12 @@ namespace AcademicWritingUtility.Domain.Models
     {
         public Guid CitationId { get; private set; }
 
-        public List<NotebookSection> Sections { get; set; } = new List<NotebookSection>();
-        public List<NotebookCitation> Citations { get; set; } = new List<NotebookCitation>();
-        public List<NotebookExternalCitation> ExternalCitations { get; set; } = new List<NotebookExternalCitation>();
+        public List<NotebookSection> NotebookSections { get; set; } = new List<NotebookSection>();
+        public List<NotebookCitation> NotebookCitations { get; set; } = new List<NotebookCitation>();
+        public List<NotebookExternalCitation> NotebookExternalCitations { get; set; } = new List<NotebookExternalCitation>();
+        public List<NotebookParaPhrase> NotebookParaPhrases { get; set; } = new List<NotebookParaPhrase>();
+
+        public Citation Citation { get; private set; }
 
         public static ArticleNotebook New(Guid id, Guid citationId)
         {
@@ -25,7 +28,7 @@ namespace AcademicWritingUtility.Domain.Models
         public NotebookSection NewNotebookSection()
         {
             int sectionNumber = 1;
-            if(Sections.Count > 0) { sectionNumber = Sections.Max(s => s.Order) + 1; }
+            if(NotebookSections.Count > 0) { sectionNumber = NotebookSections.Max(s => s.Order) + 1; }
             return NotebookSection.New(this.Id, sectionNumber, "");
         }
         public static NotebookSection NewNotebookSection(Guid id, Guid articleNotebookid, int order, string text)
@@ -47,6 +50,14 @@ namespace AcademicWritingUtility.Domain.Models
         public static NotebookExternalCitation NewNotebookExternalCitation(Guid id, Guid articleNotebookid, Guid citationId)
         {
             return NotebookExternalCitation.New(id, articleNotebookid, citationId);
+        }
+        public NotebookParaPhrase NewNotebookParaPhrase(Guid paraPhraseId)
+        {
+            return NotebookParaPhrase.New(this.Id, paraPhraseId);
+        }
+        public static NotebookParaPhrase NewNotebookParaPhrase(Guid id, Guid articleNotebookId, Guid paraPhraseid)
+        {
+            return NotebookParaPhrase.New(id, articleNotebookId, paraPhraseid);
         }
 
         public ArticleNotebook(): base() { }

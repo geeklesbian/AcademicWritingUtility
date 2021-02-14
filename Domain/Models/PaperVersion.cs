@@ -12,7 +12,7 @@ namespace AcademicWritingUtility.Domain.Models
         public int Number { get; private set; }
         public string Name { get; private set; }
 
-        public List<ParaPhrase> ParaPhrases { get; set; } = new List<ParaPhrase>();
+        public List<VersionParaPhrase> VersionParaPhrases { get; set; } = new List<VersionParaPhrase>();
 
         public Draft Draft { get; private set; }
 
@@ -24,6 +24,15 @@ namespace AcademicWritingUtility.Domain.Models
         {
             return new PaperVersion(id, draftId, number, name);
         }
+        public VersionParaPhrase NewVersionParaPhrase(Guid paraPhraseId)
+        {
+            return VersionParaPhrase.New(this.Id, paraPhraseId);
+        }
+        public static VersionParaPhrase NewVersionParaPhrase(Guid id, Guid versionId, Guid paraPhraseId)
+        {
+            return VersionParaPhrase.New(id, versionId, paraPhraseId);
+        }
+
         public PaperVersion() : base() { }
         internal PaperVersion(Guid draftId, int number, string name = "") : base()
         {

@@ -16,12 +16,14 @@ namespace AcademicWritingUtility.Domain.Models
         public string Doi { get; private set; }
 
 
+        public List<ArticleNotebook> ArticleNotebooks { get; set; } = new List<ArticleNotebook>();
         public List<CitationResearcher> CitationResearchers { get; set; } = new List<CitationResearcher>();
         public List<CitationFieldValue> CitationFieldValues { get; set; } = new List<CitationFieldValue>();
         public List<NotebookCitation> NotebookCitations { get; set; } = new List<NotebookCitation>();
         public List<NotebookExternalCitation> NotebookExternalCitations { get; set; } = new List<NotebookExternalCitation>();
         public List<ParaPhrase> ParaPhrases { get; set; } = new List<ParaPhrase>();
 
+        public Lookup CitationType { get; private set; }
 
         public virtual string GetFields<TEntity>()
            where TEntity : class, ICitation, new()

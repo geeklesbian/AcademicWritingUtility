@@ -68,6 +68,10 @@
       <Project>{08aafaf8-45e5-4dba-b9c0-7d010fe450a9}</Project>
       <Name>Services.App</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Services.Common\Services.Common.csproj">
+      <Project>{cefe316d-f10f-4214-9901-76391e529cc0}</Project>
+      <Name>Services.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

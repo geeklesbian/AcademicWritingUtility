@@ -12,7 +12,7 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         internal PaperVersionConfiguration() : base()
         {
-            HasMany(e => e.ParaPhrases).WithRequired(c => c.PaperVersion).HasForeignKey(c => c.VersionId).WillCascadeOnDelete(true);
+            HasMany(e => e.ParaPhrases).WithRequired(c => c.PaperVersion).HasForeignKey(c => c.VersionId).WillCascadeOnDelete(false);
         }
     }
 }

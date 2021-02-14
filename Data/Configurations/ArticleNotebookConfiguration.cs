@@ -13,9 +13,7 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         internal ArticleNotebookConfiguration() : base()
         {
-            HasMany(e => e.Sections).WithRequired(c => c.ArticleNotebook).HasForeignKey(c => c.ArticleNotebookId).WillCascadeOnDelete(true);
-            HasMany(e => e.Citations).WithRequired(c => c.ArticleNotebook).HasForeignKey(c => c.ArticleNotebookId).WillCascadeOnDelete(true);
-            HasMany(e => e.ExternalCitations).WithRequired(c => c.ArticleNotebook).HasForeignKey(c => c.ArticleNotebookId).WillCascadeOnDelete(true);
+            HasMany(e => e.NotebookSections).WithRequired(c => c.ArticleNotebook).HasForeignKey(c => c.ArticleNotebookId).WillCascadeOnDelete(true);
         }
     }
 }

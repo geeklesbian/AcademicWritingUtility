@@ -12,7 +12,7 @@ namespace AcademicWritingUtility.Data.Configurations
     {
         internal DraftConfiguration() : base()
         {
-            HasMany(e => e.Versions).WithRequired(c => c.Draft).HasForeignKey(c => c.DraftId).WillCascadeOnDelete(true);
+            HasMany(e => e.Versions).WithRequired(c => c.Draft).HasForeignKey(c => c.DraftId).WillCascadeOnDelete(false);
         }
     }
 }

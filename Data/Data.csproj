@@ -52,15 +52,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AWUContext.cs" />
-    <Compile Include="Configurations\ArticleNotebookConfiguration.cs" />
     <Compile Include="Configurations\BaseMigrationConfigurations.cs" />
     <Compile Include="Configurations\CitationConfiguration.cs" />
     <Compile Include="Configurations\DraftConfiguration.cs" />
     <Compile Include="Configurations\ForeignKeyNamingConvention.cs" />
     <Compile Include="Configurations\LookupConfiguration.cs" />
     <Compile Include="Configurations\LookupTypeConfiguration.cs" />
-    <Compile Include="Configurations\PaperVersionConfiguration.cs" />
+    <Compile Include="Configurations\NotebookCitationConfiguration.cs" />
+    <Compile Include="Configurations\NotebookExternalCitationConfiguration.cs" />
+    <Compile Include="Configurations\NotebookParaPhraseConfiguration.cs" />
+    <Compile Include="Configurations\NotebookSectionConfiguration.cs" />
     <Compile Include="Configurations\ResearcherConfiguration.cs" />
+    <Compile Include="Configurations\VersionParaPhraseConfiguration.cs" />
+    <Compile Include="Migrations\202102131435480_init.cs" />
+    <Compile Include="Migrations\202102131435480_init.designer.cs">
+      <DependentUpon>202102131435480_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102140132267_splitOutParaPhraseFromVersionForUseInNotebooks.cs" />
+    <Compile Include="Migrations\202102140132267_splitOutParaPhraseFromVersionForUseInNotebooks.designer.cs">
+      <DependentUpon>202102140132267_splitOutParaPhraseFromVersionForUseInNotebooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102140147006_RemoveVersionFromParaPhrasePostOtherPharaPhraseUpdates.cs" />
+    <Compile Include="Migrations\202102140147006_RemoveVersionFromParaPhrasePostOtherPharaPhraseUpdates.designer.cs">
+      <DependentUpon>202102140147006_RemoveVersionFromParaPhrasePostOtherPharaPhraseUpdates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DisposableRepository.cs" />
@@ -69,7 +84,17 @@
     <Compile Include="Repositories\FindRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202102131435480_init.resx">
+      <DependentUpon>202102131435480_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102140132267_splitOutParaPhraseFromVersionForUseInNotebooks.resx">
+      <DependentUpon>202102140132267_splitOutParaPhraseFromVersionForUseInNotebooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102140147006_RemoveVersionFromParaPhrasePostOtherPharaPhraseUpdates.resx">
+      <DependentUpon>202102140147006_RemoveVersionFromParaPhrasePostOtherPharaPhraseUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
